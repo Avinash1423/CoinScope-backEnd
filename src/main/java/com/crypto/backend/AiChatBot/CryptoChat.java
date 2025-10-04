@@ -13,6 +13,9 @@ public class CryptoChat {
     @Autowired
     ChatClient chatClient;
 
+//    @Autowired
+//    ParseAndRender parseAndRender;
+
     @PostMapping("/request")
     public String AiResponse(@RequestBody String request){
 
@@ -35,7 +38,12 @@ public class CryptoChat {
 
 
 
-            return chatClient.prompt().system(system).user(request).call().content();
+            String response= chatClient.prompt().system(system).user(request).call().content();
+
+            return response;
+                    //parseAndRender.processInput(response);
+
+
         }catch( Exception e) {
 
 
