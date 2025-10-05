@@ -24,9 +24,9 @@ public class ParseAndRender {
 
       Node root=parser.parse(response);
 
-      String render=renderer.render(root);
+        return renderer.render(root);
 
-      return Jsoup.clean(render, Safelist.relaxed());
+    //Jsoup.clean(render, Safelist.relaxed());
 
 
     }
