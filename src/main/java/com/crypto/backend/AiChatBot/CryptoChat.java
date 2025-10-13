@@ -19,13 +19,9 @@ public class CryptoChat {
     @Autowired
     ChatClient chatClient;
 
-    HtmlRenderer renderer=HtmlRenderer.builder().extensions(List.of(TablesExtension.create())).build();
-
-  @Autowired
-   ParseAndRender parseAndRender;
-
-    @GetMapping(value = "/request", produces = "text/event-stream")
-    public Flux<String> AiResponse(@RequestParam("request") String userRequest) {
+  //, produces = "text/event-stream"
+    @GetMapping(value = "/request")
+    public String AiResponse(@RequestParam("request") String userRequest) {
 
 
         String system = """
@@ -45,7 +41,7 @@ public class CryptoChat {
                     """;
 
 
-        return chatClient.prompt().system(system).user(userRequest).stream().content();
+        return chatClient.prompt().system(system).user(userRequest).call().content();
 
 
         //parseAndRender.processInput(response);
