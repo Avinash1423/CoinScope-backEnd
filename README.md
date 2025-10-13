@@ -28,18 +28,3 @@
 
 ---
 
-## 📂 Repository Structure
-
-- `frontend/` – ReactJS frontend code  
-- `backend/` – Spring Boot backend code  
-- `contracts/` – Solidity smart contracts deployed using Hardhat  
-
----
-
-## 🔗 Links
-
-- **Frontend Repo:** `[Add your link here]`  
-- **Backend Repo:** `[Add your link here]`  
-
----
-
